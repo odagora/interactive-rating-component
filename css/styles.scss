@@ -1,0 +1,139 @@
+// Layout
+$mobile-width: 330px;
+$mobile-height: 360px;
+
+// Colors
+$orange: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$light-grey: hsl(217, 12%, 63%);
+$medium-grey: hsl(215, 18%, 19%);
+$dark-blue: hsl(215, 20%, 16%);
+$very-dark-blue: hsl(216, 12%, 8%);
+
+// Typography
+$font: 'Overpass', sans-serif;
+$size: 1.5rem;
+
+// Mixins
+@mixin radio-style {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    background-color: $medium-grey;
+    border-radius: 50%;
+}
+
+@mixin radio-state ($color, $background) {
+    color: $color;
+    background-color: $background;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: $mobile-width;
+    height: $mobile-height;
+    margin: 155px auto 0;
+    padding: 25px;
+    border-radius: 12px;
+    background-color: $dark-blue;
+    &__info {
+        position: inherit;
+        & h1 {
+            margin-top: 15px;
+            font-size: 2.5rem;
+            font-family: $font;
+            font-weight: 400;
+            color: $white;
+        }
+        & p {
+            margin-top: 13px;
+            font-size: 1.4rem;
+            font-family: $font;
+            line-height: 2.1rem;
+            color: $light-grey;
+        }
+    }
+    &__input-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        & input {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+            &:checked + label {
+                @include radio-state($white, $orange);
+            }
+        }
+        & label {
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-family: $font;
+            color: $light-grey;
+            @include radio-style;
+            &:hover {
+                @include radio-state($white, $light-grey);
+            }
+        }
+    }
+    &__button {
+        margin-top: 25px;
+        & button {
+            width: 100%;
+            height: 45px;
+            border-radius: 25px;
+            border: 1px solid transparent;
+            font-family: $font;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            cursor: pointer;
+            background-color: $orange;
+            color: $white;
+            &:hover {
+                @include radio-state($orange, $white);
+            }
+        }
+    }
+}
+
+.radio {
+    @include radio-style;
+    &--icon {
+        margin-left: 1px;
+        & span {
+            display: block;
+            margin: 0 auto;
+            width: 13px;
+            height: 13px;
+            background-image: url('../images/icon-star.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.attribution {
+    margin-top: 20px;
+    font-size: 11px;
+    text-align: center;
+    a {
+        color: hsl(228, 45%, 44%);
+    }
+}
