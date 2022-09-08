@@ -87,13 +87,13 @@ Users should be able to:
 * Use of vanilla JavaScript event listeners to manage component state
 ```js
 form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const rating = document.querySelector('input[name="rating"]:checked').value;
+    e.preventDefault();
+    const rating = document.querySelector('input[name="rating"]:checked').value;
 
-                ratingTag.innerText = `You selected ${rating} out of 5`;
-                cardRating.style.display = 'none';
-                cardMessage.style.display = 'block';
-            })
+    ratingTag.innerText = `You selected ${rating} out of 5`;
+    cardRating.style.display = 'none';
+    cardMessage.style.display = 'block';
+})
 ```
 ### Continued development
 
