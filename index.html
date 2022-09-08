@@ -13,7 +13,7 @@
     <body>
         <main class="card">
             <!-- Rating state start -->
-            <section class="card__raiting">
+            <section class="card__rating">
                 <section class="card__info">
                     <div class="radio radio--icon">
                         <span></span>
@@ -46,7 +46,7 @@
             <!-- Thank you state start -->
             <section class="card__thank-you">
                 <img src="./images/illustration-thank-you.svg" alt="thank you image">
-                <p class="rating-tag">You selected 4 out of 5</p>
+                <p class="rating-tag"></p>
                 <h2>Thank you!</h2>
                 <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
             </section>
@@ -56,5 +56,20 @@
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
             Coded by <a href="https://www.frontendmentor.io/profile/odagora" target="_blank">Daniel González</a>.
         </div>
+        <script>
+            const form = document.querySelector('form');
+            const ratingTag = document.querySelector('.rating-tag');
+            const cardRating = document.querySelector('.card__rating');
+            const cardMessage = document.querySelector('.card__thank-you');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const rating = document.querySelector('input[name="rating"]:checked').value;
+
+                ratingTag.innerText = `You selected ${rating} out of 5`;
+                cardRating.style.display = 'none';
+                cardMessage.style.display = 'block';
+            })
+        </script>
     </body>
 </html>

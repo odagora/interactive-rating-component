@@ -19,9 +19,6 @@ html {
   border-radius: 12px;
   background-color: hsl(215deg, 20%, 16%);
 }
-.card__raiting {
-  display: none;
-}
 .card__info {
   position: inherit;
 }
@@ -92,7 +89,7 @@ html {
   background-color: hsl(0deg, 0%, 100%);
 }
 .card__thank-you {
-  display: block;
+  display: none;
 }
 .card__thank-you img {
   display: block;
