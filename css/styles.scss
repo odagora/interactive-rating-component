@@ -15,6 +15,20 @@ $font: 'Overpass', sans-serif;
 $size: 1.5rem;
 
 // Mixins
+@mixin title-format {
+    font-size: 2.5rem;
+    font-family: $font;
+    font-weight: 400;
+    color: $white;
+}
+
+@mixin paragraph-format {
+    font-size: 1.4rem;
+    font-family: $font;
+    line-height: 2.1rem;
+    color: $light-grey;
+}
+
 @mixin radio-style {
     display: flex;
     align-items: center;
@@ -51,21 +65,19 @@ html {
     padding: 25px;
     border-radius: 12px;
     background-color: $dark-blue;
+    &__raiting {
+        // To be handled by JavaScript
+        display: none;
+    }
     &__info {
         position: inherit;
         & h1 {
             margin-top: 15px;
-            font-size: 2.5rem;
-            font-family: $font;
-            font-weight: 400;
-            color: $white;
+            @include title-format;
         }
         & p {
             margin-top: 13px;
-            font-size: 1.4rem;
-            font-family: $font;
-            line-height: 2.1rem;
-            color: $light-grey;
+            @include paragraph-format;
         }
     }
     &__input-group {
@@ -108,6 +120,39 @@ html {
             &:hover {
                 @include radio-state($orange, $white);
             }
+        }
+    }
+    &__thank-you {
+        // To be handled by JavaScript
+        display: block;
+        & img {
+            display: block;
+            margin: 9px auto 0;
+            height: 95px;
+            width: 143px;
+        }
+        .rating-tag {
+            margin: 25px auto 0;
+            padding: 8px;
+            width: 170px;
+            height: 30px;
+            font-family: $font;
+            font-size: 1.4rem;
+            color: $orange;
+            text-align: center;
+            background-color: $medium-grey;
+            border-radius: 15px;
+        }
+        & h2 {
+            margin-top: 28px;
+            text-align: center;
+            @include title-format;
+        }
+        & p {
+            margin-top: 10px;
+            text-align: center;
+            @include paragraph-format;
+
         }
     }
 }

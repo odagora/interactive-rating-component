@@ -19,6 +19,9 @@ html {
   border-radius: 12px;
   background-color: hsl(215deg, 20%, 16%);
 }
+.card__raiting {
+  display: none;
+}
 .card__info {
   position: inherit;
 }
@@ -87,6 +90,43 @@ html {
 .card__button button:hover {
   color: hsl(25deg, 97%, 53%);
   background-color: hsl(0deg, 0%, 100%);
+}
+.card__thank-you {
+  display: block;
+}
+.card__thank-you img {
+  display: block;
+  margin: 9px auto 0;
+  height: 95px;
+  width: 143px;
+}
+.card__thank-you .rating-tag {
+  margin: 25px auto 0;
+  padding: 8px;
+  width: 170px;
+  height: 30px;
+  font-family: "Overpass", sans-serif;
+  font-size: 1.4rem;
+  color: hsl(25deg, 97%, 53%);
+  text-align: center;
+  background-color: hsl(215deg, 18%, 19%);
+  border-radius: 15px;
+}
+.card__thank-you h2 {
+  margin-top: 28px;
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  color: hsl(0deg, 0%, 100%);
+}
+.card__thank-you p {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: "Overpass", sans-serif;
+  line-height: 2.1rem;
+  color: hsl(217deg, 12%, 63%);
 }
 
 .radio {
